@@ -139,7 +139,7 @@ export const InvoiceClientSection: React.FC<InvoiceClientSectionProps> = ({
           )}
         </div>
 
-        {clientModules && clientModules.length > 0 && !selectedClient && !isNewClientForm && (
+        {clientModules && clientModules.length > 0 && selectedClient && !isNewClientForm && (
           <div className="pt-4 border-t border-[var(--border-main)] border-dashed">
             <div className="bg-amber-500/5 rounded-xl border border-amber-500/10 p-3 space-y-3">
                <div className="flex items-center gap-2">
