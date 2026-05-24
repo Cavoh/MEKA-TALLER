@@ -1,0 +1,5 @@
+{
+  "name": "MekaWorkshop - Gestión de Talleres",
+  "description": "Sistema integral para la gestión de talleres mecánicos: facturación, inventario, mantenimiento y clientes con soporte multi-tenant.",
+  "requestFramePermissions": []
+}

@@ -1,0 +1,1 @@
+bg-[var(--modal-bg)] p-12

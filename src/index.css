@@ -1,0 +1,188 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-main: #f4f4f5;
+    --bg-card: #ffffff;
+    --text-main: #09090b;
+    --text-muted: #71717a;
+    --border-main: #e4e4e7;
+    --emphasis-color: #4f46e5;
+    /* Card shadow token - Optimized for performance */
+    --card-shadow: 0 4px 14px -2px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.06);
+    /* Form / Input tokens */
+    --input-bg: #fafafa;
+    --input-border: #e4e4e7;
+    --input-text: #09090b;
+    --input-placeholder: #a1a1aa;
+    --input-focus-border: #09090b;
+    --modal-bg: #ffffff;
+    --modal-inner-bg: #fafafa;
+    --table-header-bg: #f4f4f5;
+    --table-row-hover: #f9f9f9;
+    --table-divider: #e4e4e7;
+    --header-bg: #ffffff;
+    --header-text: #09090b;
+    --header-border: #e4e4e7;
+    --pill-bg: var(--modal-bg);
+    --calendar-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect width='18' height='18' x='3' y='4' rx='2' ry='2'%3E%3C/rect%3E%3Cline x1='16' x2='16' y1='2' y2='6'%3E%3C/line%3E%3Cline x1='8' x2='8' y1='2' y2='6'%3E%3C/line%3E%3Cline x1='3' x2='21' y1='10' y2='10'%3E%3C/line%3E%3C/svg%3E");
+  }
+
+  [data-theme='gray'] {
+    --bg-main: #f1f5f9;
+    --bg-card: #ffffff;
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+    --border-main: #cbd5e1;
+    /* Card shadow token */
+    --card-shadow: 0 6px 16px -2px rgba(0,0,0,0.12), 0 2px 4px -2px rgba(0,0,0,0.08);
+    /* Form / Input tokens */
+    --input-bg: #f1f5f9;
+    --input-border: #cbd5e1;
+    --input-text: #1e293b;
+    --input-placeholder: #94a3b8;
+    --input-focus-border: #1e293b;
+    --modal-bg: #ffffff;
+    --modal-inner-bg: #f1f5f9;
+    --table-header-bg: #f8fafc;
+    --table-row-hover: #f1f5f9;
+    --table-divider: #cbd5e1;
+    --header-bg: #f8fafc;
+    --header-text: #1e293b;
+    --header-text-muted: #64748b;
+    --header-border: #cbd5e1;
+    --pill-bg: var(--table-header-bg);
+    --calendar-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect width='18' height='18' x='3' y='4' rx='2' ry='2'%3E%3C/rect%3E%3Cline x1='16' x2='16' y1='2' y2='6'%3E%3C/line%3E%3Cline x1='8' x2='8' y1='2' y2='6'%3E%3C/line%3E%3Cline x1='3' x2='21' y1='10' y2='10'%3E%3C/line%3E%3C/svg%3E");
+  }
+
+  /* Emphasis Color Light Variants for Gray Theme (Level 100 for visibility) */
+  [data-theme='gray'][data-emphasis='indigo'] { --table-header-bg: #e0e7ff; }
+  [data-theme='gray'][data-emphasis='esmeralda'] { --table-header-bg: #d1fae5; }
+  [data-theme='gray'][data-emphasis='rojo'] { --table-header-bg: #fee2e2; }
+  [data-theme='gray'][data-emphasis='gris'] { --table-header-bg: #f1f5f9; }
+
+  [data-theme='dark'] {
+    --bg-main: #09090b;
+    --bg-card: #18181b;
+    --text-main: #fafafa;
+    --text-muted: #a1a1aa;
+    --border-main: #27272a;
+    /* Card shadow token */
+    --card-shadow: 0 6px 16px rgba(0,0,0,0.4), 0 2px 6px rgba(0,0,0,0.2);
+    /* Form / Input tokens */
+    --input-bg: #27272a;
+    --input-border: #3f3f46;
+    --input-text: #fafafa;
+    --input-placeholder: #71717a;
+    --input-focus-border: #a1a1aa;
+    --modal-bg: #18181b;
+    --modal-inner-bg: #27272a;
+    --table-header-bg: #27272a;
+    --table-row-hover: #1c1c1f;
+    --table-divider: #3f3f46;
+    --header-bg: #09090b;
+    --header-text: #fafafa;
+    --header-text-muted: #a1a1aa;
+    --header-border: #27272a;
+    --calendar-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect width='18' height='18' x='3' y='4' rx='2' ry='2'%3E%3C/rect%3E%3Cline x1='16' x2='16' y1='2' y2='6'%3E%3C/line%3E%3Cline x1='8' x2='8' y1='2' y2='6'%3E%3C/line%3E%3Cline x1='3' x2='21' y1='10' y2='10'%3E%3C/line%3E%3C/svg%3E");
+  }
+
+  /* Emphasis Color Overrides */
+  :root[style*="--emphasis-base: indigo"] { --emphasis-color: #4f46e5; }
+  :root[style*="--emphasis-base: esmeralda"] { --emphasis-color: #10b981; }
+  :root[style*="--emphasis-base: rojo"] { --emphasis-color: #ef4444; }
+  :root[style*="--emphasis-base: gris"] { --emphasis-color: #52525b; }
+
+  body {
+    @apply transition-colors duration-300;
+  }
+}
+
+@media print {
+  /* Reset generales para impresión */
+  html, body {
+    height: auto !important;
+    overflow: visible !important;
+    background: white !important;
+  }
+
+  /* Ocultar TODO el contenido del body inicialmente */
+  body * {
+    visibility: hidden !important;
+  }
+
+  /* Mostrar SOLO el contenedor de la factura y sus hijos */
+  #printable-invoice,
+  #printable-invoice *,
+  #printable-area,
+  #printable-area * {
+    visibility: visible !important;
+  }
+
+  /* Posicionar la factura al inicio de la página */
+  #printable-invoice,
+  #printable-area {
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    display: block !important;
+    visibility: visible !important;
+  }
+
+  /* Forzar que no haya bordes de página del navegador si es posible */
+  @page {
+    margin: 0.5cm;
+    size: auto;
+  }
+}
+
+/* Ocultar el contenedor de impresión en la pantalla normal */
+@media screen {
+  #printable-invoice {
+    display: none !important;
+  }
+}
+
+/* Utilidades Personalizadas */
+@layer utilities {
+  .card-shadow {
+    box-shadow: var(--card-shadow) !important;
+  }
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Estilo para el icono del calendario nativo - Inyección de SVG Tematizado */
+input::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  background-image: var(--calendar-icon) !important;
+  background-size: 16px 16px;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+/* Forzar que el puntero sea clickable en todo el input de fecha */
+input[type="date"] {
+  cursor: pointer;
+}
+
+@keyframes pulse-red-glow {
+  0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); }
+  70% { box-shadow: 0 0 0 15px rgba(239, 68, 68, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+}
+
+.animate-pulse-red {
+  animation: pulse-red-glow 2s infinite;
+}
+
