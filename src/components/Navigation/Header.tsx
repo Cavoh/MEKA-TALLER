@@ -3,6 +3,7 @@ import { Menu, Settings, Palette, LogOut, ChevronRight } from 'lucide-react';
 import { WorkshopContext } from '../../context/WorkshopContext';
 import { cn } from '../../utils';
 import MobileMenu from './MobileMenu';
+import Sidebar from './Sidebar';
 
 export default function Header() {
   const context = useContext(WorkshopContext);
@@ -34,23 +35,19 @@ export default function Header() {
         <Menu className="w-6 h-6" />
       </button>
 
-      {/* Desktop: Navigation Tabs (Ocultos si < 1024px) */}
-      <div className="hidden lg:flex items-center gap-6 overflow-x-auto flex-1 no-scrollbar pr-8">
-        {(visibleTabs as any[]).map(tab => (
-          <button
-            key={tab.id}
-            onClick={() => setActiveTab(tab.id)}
-            className={cn(
-              "py-2.5 px-0.5 border-b-4 tracking-widest transition-all uppercase whitespace-nowrap h-[55px] flex items-center",
-              activeTab === tab.id 
-                ? "border-[var(--emphasis-color)] text-[var(--header-text)] font-black text-[15px]" 
-                : "border-transparent text-[var(--header-text-muted)] hover:text-[var(--header-text)] font-bold text-[10px]"
-            )}
-          >
-            {tab.label}
-          </button>
-        ))}
-      </div>
+      {/* Desktop: Sidebar (visible on lg+) */}
+      <Sidebar
+        visibleTabs={visibleTabs as any[]}
+        activeTab={activeTab}
+        setActiveTab={setActiveTab}
+        staff={staff}
+        tenant={tenant}
+        onSettings={() => setIsSettingsOpen(true)}
+        onAppearance={() => setIsAppearanceOpen(true)}
+        onLogout={logout}
+        switchStaff={switchStaff}
+        tenantName={tenant.name}
+      />
 
       {/* Mobile Center Branding */}
       <div className="flex lg:hidden flex-1 justify-center items-center h-full">
