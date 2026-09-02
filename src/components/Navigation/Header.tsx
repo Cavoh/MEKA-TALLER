@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Menu, Settings, Palette, LogOut, ChevronRight } from 'lucide-react';
+import { Menu } from 'lucide-react';
 import { WorkshopContext } from '../../context/WorkshopContext';
 import { cn } from '../../utils';
 import MobileMenu from './MobileMenu';
@@ -55,22 +55,7 @@ export default function Header() {
       </div>
 
       {/* Desktop: User Controls (Ocultos si < 1024px) */}
-      <div className="hidden lg:flex items-center gap-6 shrink-0 h-full">
-        <div className="flex items-center gap-2">
-          <button 
-            onClick={() => setIsSettingsOpen(true)}
-            className="bg-[var(--bg-main)] hover:bg-white p-1.5 rounded-lg text-[var(--header-text-muted)] hover:text-[var(--header-text)] transition-all border border-[var(--border-main)]"
-          >
-            <Settings className="w-3.5 h-3.5" />
-          </button>
-          <button 
-            onClick={() => setIsAppearanceOpen(true)}
-            className="bg-[var(--bg-main)] hover:bg-white p-1.5 rounded-lg text-[var(--header-text-muted)] hover:text-[var(--header-text)] transition-all border border-[var(--border-main)]"
-          >
-            <Palette className="w-3.5 h-3.5" />
-          </button>
-        </div>
-
+      <div className="hidden lg:flex items-center gap-4 shrink-0 h-full">
         <div className="flex items-center gap-4 border-l border-[var(--header-border)] pl-6 h-full">
           <div className="text-right">
             <p className="text-xs font-black text-[var(--header-text)] uppercase leading-none">{staff.nombre}</p>
@@ -84,12 +69,6 @@ export default function Header() {
               </button>
             </div>
           </div>
-          <button 
-            onClick={logout} 
-            className="bg-[var(--bg-main)] hover:bg-red-600 p-1.5 rounded-xl text-[var(--header-text)] hover:text-white transition-all border border-[var(--border-main)] group shadow-sm"
-          >
-            <LogOut className="w-3.5 h-3.5 group-hover:scale-110 transition-transform" />
-          </button>
         </div>
       </div>
 
