@@ -50,7 +50,7 @@ export default function Sidebar({ visibleTabs, activeTab, setActiveTab, staff, t
     .filter(group => group.tabs.length > 0);
 
   return (
-    <aside className="fixed left-0 top-0 bottom-0 w-0 lg:w-40 bg-[var(--bg-main)] border-r border-[var(--border-main)] z-20 flex flex-col">
+    <aside className="fixed left-0 top-0 bottom-0 hidden lg:flex lg:w-40 bg-[var(--bg-main)] border-r border-[var(--border-main)] z-20 flex-col">
       {/* Space for config module logo in sidebar header */}
       <div className="h-4 w-full border-b border-[var(--border-main)]" />
 
