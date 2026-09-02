@@ -343,7 +343,7 @@ export default function App() {
       setIsAppearanceOpen,
       visibleTabs: visibleTabs as any[]
     }}>
-      <div className="min-h-screen bg-[var(--bg-main)] flex flex-col font-sans transition-colors duration-300">
+      <div className="min-h-screen bg-[var(--bg-main)] flex flex-col font-sans transition-colors duration-300 ml-0 lg:ml-40">
         <Header />
 
         <SettingsModal 
